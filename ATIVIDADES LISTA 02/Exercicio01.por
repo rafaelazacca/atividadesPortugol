@@ -4,29 +4,25 @@ programa
 	funcao inicio()
 	{
 
-	inteiro pesoTomate
-	real multa = 0.00 
-	real excesso = 4.00
-	inteiro excesso2
+	real pesoTomate = 0.0
+	real multa = 0.0 
+	real excesso = 0.0
+	real pesoLimite = 50.00
 
 	escreva("Quantos quilos de tomate: ")
 	leia(pesoTomate)
 
-	se (pesoTomate <= 50)
-	{
-		escreva("A quantidade de quilos de tomate é: ", pesoTomate, "\nMulta a pagar: R$", multa)
+
+	se (pesoTomate > pesoLimite){
+		excesso = pesoTomate - pesoLimite
+		multa = excesso * 4.00
+		escreva("A quantidade de quilos de tomate é: ", pesoTomate, "\nMulta a pagar: R$", multa) 
 	}
 
-	senao 
-	{
-		excesso2 = pesoTomate - 50
-		multa = excesso2 * excesso 
-		escreva("A quantidade de quilos de tomate é: ", pesoTomate, "\nMulta a pagar: R$", multa)
+	senao {
 		
-		 
+		escreva("A quantidade de quilos de tomate é: ", pesoTomate, "\nMulta a pagar: R$", multa)
 	}
-	
-	
 	
 	}
 }
@@ -35,7 +31,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 183; 
+ * @POSICAO-CURSOR = 237; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
