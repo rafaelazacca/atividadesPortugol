@@ -1,50 +1,53 @@
 programa
 {
-	//Exercicio - 01
+	
 	funcao inicio()
 	{
-		real salario, somaSalario=0.0, mediaSalario, mediaNumeroFilhos, maiorSalario=0.0, porc100
-		real somaNumeroFilhos=0.0, cont100=0.0
-		inteiro numeroFilhos, x, habitantes = 5
+		inteiro numeroFilhos, habitantes = 5, contador = 0  
+		real salario, mediaSalario = 0.0, maiorSalario = 0.0, somaSalario = 0.0, qtdePessoasSalario100 = 0.0
+		real mediaFilhos = 0.0, somaFilhos = 0.0, percentualPessoasSalario100 = 0.0 
+
 		
-		para (x=1;x<=habitantes;x++) //x++ é a mesma coisa que x = x+1
+		para (contador=1;contador<=habitantes;contador++)
 		{
-			escreva("Digite o seu salário: ")
-			leia(salario) 
-			escreva("Digite o número de filhos: ")
-			leia(numeroFilhos) 
+		
+		escreva("Digite o valor do salário: ")
+		leia(salario)
 
-			somaSalario = somaSalario + salario
-			somaNumeroFilhos = somaNumeroFilhos + numeroFilhos
-			
-			se (maiorSalario < salario)
-			{
-				maiorSalario = salario
-			}
+		escreva("Digite o número de filhos: ")
+		leia(numeroFilhos)
 
-			se (salario <= 100)
-			{
-				cont100 = cont100 + 1 // cont100++
-			}
+		somaSalario = somaSalario + salario
+		somaFilhos = somaFilhos + numeroFilhos
+
+		se (maiorSalario < salario)
+		{
+			maiorSalario = salario 
+		}
+		se (salario<=100)
+		{
+			qtdePessoasSalario100 = qtdePessoasSalario100 + 1 
+		}
+		
+		mediaSalario = somaSalario / habitantes
+		mediaFilhos = somaFilhos / habitantes
+		percentualPessoasSalario100 = (qtdePessoasSalario100 / habitantes) * 100
+
 		}
 
-		mediaSalario = somaSalario / habitantes
-		mediaNumeroFilhos = somaNumeroFilhos / 5
-		porc100 = (cont100*100) / 5
-
-		escreva("\n Média Salarial: ",mediaSalario)
-		escreva("\n Média número de filhos: ",mediaNumeroFilhos)
-		escreva("\n Maior salário: ",maiorSalario)
-		escreva("\n Porcentagem de pessoas que recebem até 100 reais: ",porc100)
-	
-}}
-
+		escreva("A média de salário da população é: ", mediaSalario)
+		escreva("\nA média de filhos por habitantes é: ", mediaFilhos)
+		escreva("\nO percentual de pessoas que recebem R$ 100 reias é: ", percentualPessoasSalario100) 
+		escreva("\nO maior salário é: ", maiorSalario)
+		
+	}
+}
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 544; 
+ * @POSICAO-CURSOR = 395; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
